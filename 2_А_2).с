@@ -1,1 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
 
+int main(void) 
+
+{ 
+  int col=0,vid=0;
+  printf("Введіть кількість елементів масиву\n");
+  scanf("%d",&col);  
+  int a[col];
+
+  for (int i=0; i<col; i++)
+  { 
+    printf("a[%d]=", i);
+    scanf("%d", &a[i]);
+  }  
+  int num = 0;
+    for (int i=1; i < col; i++)
+     {
+        if (abs(a[i]) < abs(a[num]))
+            num = i;
+    }
+
+    printf("%d число наймешне по модулю\n", num+1);
+    int suma=0;
+  for (int i=num+1; i < col; i++)  
+  suma=suma+a[i];
+printf("Сума елементів масиву,розташованих після мінімального за модулем елемента = %d",suma);
+
+
+  return 0;
+}
