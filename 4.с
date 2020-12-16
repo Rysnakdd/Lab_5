@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(void) 
+{
+const int Low = -100, High = 100;
+int n=0, m=0;
+printf("Введіть розмірність матриці\nn = ");
+scanf("%d",&n);
+printf("m = ");
+scanf("%d",&m);
+int a[n][m]; 
+srand((time(0)));
+for (int i = 0; i < n; i++) 
+for (int j = 0; j < m; j++) 
+{
+  a[i][j]=Low+rand()%(High-Low+1); 
+}
+printf("\n");
+for (int i = 0; i < n; i++)
+{   
+for (int j = 0; j < m; j++)
+   printf("a[%d][%d]=%3d\t\t", i, j, a[i][j]); 
+   printf("\n\n");
+}         
+int f=1;
+for (int i=0;i<n;i++)
+for (int j=0;j<m;j++)
+{if (a[i][j]!=a[n-j-1][m-i-1])f=0;
+}
+if (f==1)
+printf("Матриця семетрична"); 
+else printf("Матриця не семетрична");
+	return 0;
+}
