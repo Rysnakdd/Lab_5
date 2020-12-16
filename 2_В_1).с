@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(void) 
+
+{ 
+ const int Low=-100, High=100;
+  int col=0, vid=0;
+  printf("Введіть кількість елементів масиву\n");
+  scanf("%d", &col);
+  int a[col];
+  srand(time(0)); 
+
+  for (int i=0; i<col; i++)
+  { 
+    a[i]=Low+rand()%(High-Low+1);
+  }  
+  for (int i=0; i<col; i++)
+  { 
+	printf("\n");   
+    printf("a[%d]=%3d\t", i, a[i]);
+  }  
+  printf("\n"); 
+  for (int i=0; i<col; i++)
+  {  
+    if (a[i]<0)
+    {
+vid=vid+1;;
+printf("a[%d]=%d\t", i, a[i]);
+    }
+}
+printf("\nКількість відємних знвчень = %d\n",vid);
+ 
+  return 0;
+}
